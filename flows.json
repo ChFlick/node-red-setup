@@ -1,0 +1,985 @@
+[
+    {
+        "id": "685ea47.0b5645c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4b1ec0c4.1f837",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e1d398a2.2103a8",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "in": [],
+        "out": []
+    },
+    {
+        "id": "d83d4c22.a05d3",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "729440c2.472fc",
+        "type": "ui_group",
+        "z": "",
+        "name": "Schlafzimmer",
+        "tab": "d83d4c22.a05d3",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "5b6cbad0.71cc64",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Flutz Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 60,
+                "sy": 60,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "606d43c8.0b05ac",
+        "type": "ui_group",
+        "z": "",
+        "name": "Wohnzimmer",
+        "tab": "d83d4c22.a05d3",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "1dc71767.f9ab59",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "MQ Broker",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "efb40622.bf9458",
+        "type": "ui_group",
+        "z": "",
+        "name": "Climate",
+        "tab": "d83d4c22.a05d3",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "5df56180.1d025",
+        "type": "tuya-smart",
+        "z": "685ea47.0b5645c",
+        "deviceName": "Schlafzimmer Schalter",
+        "deviceIp": "192.168.178.54",
+        "deviceId": "1207701884f3eb1b6064",
+        "deviceKey": "9d954df0a82ca849",
+        "request": "{\"schema\": true}",
+        "pollingInterval": "10",
+        "x": 612,
+        "y": 272,
+        "wires": [
+            [
+                "fb2fec78.46ac1",
+                "c533db6f.530198"
+            ]
+        ]
+    },
+    {
+        "id": "47b3803e.7d841",
+        "type": "tuya-smart",
+        "z": "685ea47.0b5645c",
+        "deviceName": "Wohnzimmer Schalter",
+        "deviceIp": "192.168.178.49",
+        "deviceId": "0206813184f3eb1b9d8d",
+        "deviceKey": "5f24c45d2426ffee",
+        "request": "{\"schema\": true}",
+        "pollingInterval": "10",
+        "x": 612,
+        "y": 352,
+        "wires": [
+            [
+                "908a88d3.95ff78",
+                "6d2625d.352bedc"
+            ]
+        ]
+    },
+    {
+        "id": "6e86c88c.930298",
+        "type": "ui_switch",
+        "z": "685ea47.0b5645c",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "606d43c8.0b05ac",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "",
+        "style": "",
+        "onvalue": "{\"set\": true}",
+        "onvalueType": "json",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "{\"set\": false}",
+        "offvalueType": "json",
+        "officon": "",
+        "offcolor": "",
+        "x": 114,
+        "y": 352,
+        "wires": [
+            [
+                "aaebc4a7.311d98"
+            ]
+        ]
+    },
+    {
+        "id": "f6356d85.76427",
+        "type": "ui_switch",
+        "z": "685ea47.0b5645c",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "729440c2.472fc",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "",
+        "style": "",
+        "onvalue": "{\"set\": true}",
+        "onvalueType": "json",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "{\"set\": false}",
+        "offvalueType": "json",
+        "officon": "",
+        "offcolor": "",
+        "x": 114,
+        "y": 272,
+        "wires": [
+            [
+                "b149c75b.f93d28"
+            ]
+        ]
+    },
+    {
+        "id": "995dc369.c8e24",
+        "type": "ui_gauge",
+        "z": "685ea47.0b5645c",
+        "name": "",
+        "group": "729440c2.472fc",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Current",
+        "label": "mA",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1292,
+        "y": 224,
+        "wires": []
+    },
+    {
+        "id": "c659756.9da0188",
+        "type": "ui_gauge",
+        "z": "685ea47.0b5645c",
+        "name": "",
+        "group": "606d43c8.0b05ac",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Current",
+        "label": "mA",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1292,
+        "y": 352,
+        "wires": []
+    },
+    {
+        "id": "c27b30d4.7d30c",
+        "type": "ui_chart",
+        "z": "685ea47.0b5645c",
+        "name": "",
+        "group": "606d43c8.0b05ac",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Current over Time",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1800",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 1322,
+        "y": 400,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "527cc068.bb4ee",
+        "type": "ui_chart",
+        "z": "685ea47.0b5645c",
+        "name": "",
+        "group": "729440c2.472fc",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "label": "Current over Time",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1800",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 1322,
+        "y": 272,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fb2fec78.46ac1",
+        "type": "function",
+        "z": "685ea47.0b5645c",
+        "name": "Extract current",
+        "func": "\nreturn {payload: msg.payload.data.dps[4]};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 848,
+        "y": 272,
+        "wires": [
+            [
+                "995dc369.c8e24",
+                "527cc068.bb4ee",
+                "50cb63a.1a9a49c"
+            ]
+        ]
+    },
+    {
+        "id": "908a88d3.95ff78",
+        "type": "function",
+        "z": "685ea47.0b5645c",
+        "name": "Extract current",
+        "func": "\nreturn {payload: msg.payload.data.dps[4]};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 848,
+        "y": 352,
+        "wires": [
+            [
+                "c27b30d4.7d30c",
+                "c659756.9da0188",
+                "2348a459.f1192c"
+            ]
+        ]
+    },
+    {
+        "id": "c533db6f.530198",
+        "type": "function",
+        "z": "685ea47.0b5645c",
+        "name": "Check if active",
+        "func": "\nreturn {payload: {\"set\": msg.payload.data.dps[1]}};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 80,
+        "wires": [
+            [
+                "f6356d85.76427"
+            ]
+        ]
+    },
+    {
+        "id": "6d2625d.352bedc",
+        "type": "function",
+        "z": "685ea47.0b5645c",
+        "name": "Check if active",
+        "func": "\nreturn {payload: {\"set\": msg.payload.data.dps[1]}};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 464,
+        "y": 576,
+        "wires": [
+            [
+                "6e86c88c.930298"
+            ]
+        ]
+    },
+    {
+        "id": "8bd2d257.78f84",
+        "type": "status",
+        "z": "685ea47.0b5645c",
+        "name": "Connection Status Schlafzimmer",
+        "scope": [
+            "5df56180.1d025"
+        ],
+        "x": 1058,
+        "y": 160,
+        "wires": [
+            [
+                "41eb427d.ed6e3c"
+            ]
+        ]
+    },
+    {
+        "id": "41eb427d.ed6e3c",
+        "type": "ui_text",
+        "z": "685ea47.0b5645c",
+        "group": "729440c2.472fc",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Connection",
+        "format": "{{msg.status.text}}",
+        "layout": "row-spread",
+        "x": 1302,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a0f2a245.574ef",
+        "type": "status",
+        "z": "685ea47.0b5645c",
+        "name": "Connection Status Wohnzimmer",
+        "scope": [
+            "47b3803e.7d841"
+        ],
+        "x": 1058,
+        "y": 464,
+        "wires": [
+            [
+                "3f73a5ad.71979a"
+            ]
+        ]
+    },
+    {
+        "id": "3f73a5ad.71979a",
+        "type": "ui_text",
+        "z": "685ea47.0b5645c",
+        "group": "606d43c8.0b05ac",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Connection",
+        "format": "{{msg.status.text}}",
+        "layout": "row-spread",
+        "x": 1302,
+        "y": 464,
+        "wires": []
+    },
+    {
+        "id": "2348a459.f1192c",
+        "type": "change",
+        "z": "685ea47.0b5645c",
+        "name": "Set to flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "currentLivingRoom",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 854,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "50cb63a.1a9a49c",
+        "type": "change",
+        "z": "685ea47.0b5645c",
+        "name": "Set to flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "currentBedRoom",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 854,
+        "y": 224,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b149c75b.f93d28",
+        "type": "switch",
+        "z": "685ea47.0b5645c",
+        "name": "TopIfTrueBottomIfFalse",
+        "property": "payload.set",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 302,
+        "y": 272,
+        "wires": [
+            [
+                "5df56180.1d025"
+            ],
+            [
+                "5f684b70.864ab4"
+            ]
+        ]
+    },
+    {
+        "id": "aaebc4a7.311d98",
+        "type": "switch",
+        "z": "685ea47.0b5645c",
+        "name": "TopIfTrueBottomIfFalse",
+        "property": "payload.set",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 302,
+        "y": 352,
+        "wires": [
+            [
+                "47b3803e.7d841"
+            ],
+            [
+                "5231ad0b.785794"
+            ]
+        ]
+    },
+    {
+        "id": "5231ad0b.785794",
+        "type": "switch",
+        "z": "685ea47.0b5645c",
+        "name": "onlyContinueIfCurrentIsLow",
+        "property": "currentLivingRoom",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "300",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 440,
+        "y": 400,
+        "wires": [
+            [
+                "47b3803e.7d841"
+            ],
+            [
+                "9e9a4e5e.faebe"
+            ]
+        ]
+    },
+    {
+        "id": "5f684b70.864ab4",
+        "type": "switch",
+        "z": "685ea47.0b5645c",
+        "name": "onlyContinueIfCurrentIsLow",
+        "property": "currentBedRoom",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "300",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 456,
+        "y": 224,
+        "wires": [
+            [
+                "5df56180.1d025"
+            ],
+            [
+                "9e9a4e5e.faebe"
+            ]
+        ]
+    },
+    {
+        "id": "3ccbd922.730f46",
+        "type": "ui_toast",
+        "z": "685ea47.0b5645c",
+        "position": "top right",
+        "displayTime": "5",
+        "highlight": "",
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "Error",
+        "name": "Error too high current",
+        "x": 1332,
+        "y": 32,
+        "wires": []
+    },
+    {
+        "id": "9e9a4e5e.faebe",
+        "type": "function",
+        "z": "685ea47.0b5645c",
+        "name": "Errormessage",
+        "func": "\nreturn {payload: \"Please disable the devices first.\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 848,
+        "y": 32,
+        "wires": [
+            [
+                "3ccbd922.730f46"
+            ]
+        ]
+    },
+    {
+        "id": "c89658e8.5bdb38",
+        "type": "mosca in",
+        "z": "4b1ec0c4.1f837",
+        "mqtt_port": 1883,
+        "mqtt_ws_port": "8888",
+        "name": "",
+        "username": "",
+        "password": "",
+        "dburl": "",
+        "x": 106,
+        "y": 32,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db540bdf.bf90c8",
+        "type": "mqtt in",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "topic": "sensor/temperature",
+        "qos": "2",
+        "broker": "1dc71767.f9ab59",
+        "x": 202,
+        "y": 112,
+        "wires": [
+            [
+                "a284bb8d.fa8bd8",
+                "c4276034.bf068"
+            ]
+        ]
+    },
+    {
+        "id": "a5cfd698.3968d8",
+        "type": "mqtt in",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "topic": "sensor/humidity",
+        "qos": "2",
+        "broker": "1dc71767.f9ab59",
+        "x": 192,
+        "y": 208,
+        "wires": [
+            [
+                "e6c99f18.be585",
+                "ebee911a.af052"
+            ]
+        ]
+    },
+    {
+        "id": "9ff5a40f.764dd8",
+        "type": "mqtt out",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "topic": "homeassistant/switch1",
+        "qos": "0",
+        "retain": "false",
+        "broker": "1dc71767.f9ab59",
+        "x": 532,
+        "y": 352,
+        "wires": []
+    },
+    {
+        "id": "c4276034.bf068",
+        "type": "ui_gauge",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "group": "efb40622.bf9458",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "colors": [
+            "#0e00b5",
+            "#e600ce",
+            "#ff0202"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 500,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a284bb8d.fa8bd8",
+        "type": "ui_chart",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "group": "efb40622.bf9458",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "7",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 500,
+        "y": 112,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ebee911a.af052",
+        "type": "ui_gauge",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "group": "efb40622.bf9458",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#fff31c",
+            "#00e605",
+            "#0f02ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 490,
+        "y": 256,
+        "wires": []
+    },
+    {
+        "id": "e6c99f18.be585",
+        "type": "ui_chart",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "group": "efb40622.bf9458",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "7",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 492,
+        "y": 208,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fdd1d78d.6b0328",
+        "type": "ui_switch",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "label": "LED",
+        "tooltip": "",
+        "group": "efb40622.bf9458",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 160,
+        "y": 352,
+        "wires": [
+            [
+                "9ff5a40f.764dd8"
+            ]
+        ]
+    }
+]
