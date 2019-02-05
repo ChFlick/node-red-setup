@@ -18,9 +18,15 @@ The second flow controls MQTT devices. MQTT is handled by a [Mosca MQTT Broker](
 
 ## Features
 - Display of the values in a gauge (real time) and a chart (5 minute aggregation)
-- Example of controlling an actuator (simply a LED).
+- Controlling an actuator (simply a LED).
 
 ![MQTT Flow](https://github.com/ChFlick/node-red-setup/blob/master/sensorFlow.png "Sensor Flow")
 
 # UI
 ![Dashboard](https://github.com/ChFlick/node-red-setup/blob/master/dashboard.PNG "Dashboard")
+
+# Sensor/Actuator Setup
+The Sensor/Actuator system uses a Wemos with an ESP8266 microcontroller.
+For temperature and humidity, a DHT22 sensor is being used.
+
+![Sensor Actuator Setup](https://github.com/ChFlick/node-red-setup/blob/master/wemosSetup.jpg "Sensor Actuator Setup")
