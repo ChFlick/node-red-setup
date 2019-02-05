@@ -1,41 +1,77 @@
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <DHT.h>
+#include <Wire.h>
 
-#define wifi_ssid "SSID"
-#define wifi_password "PASSW"
+#define wifi_ssid "FRITZ!Box 7490"
+#define wifi_password ""
 
-#define mqtt_server "127.0.0.1"
+#define mqtt_server "192.168.178.56"
 #define mqtt_user ""      // if exist
 #define mqtt_password ""  //idem
 
 #define temperature_topic "sensor/temperature"  //Topic temperature
 #define humidity_topic "sensor/humidity"        //Topic humidity
+#define gas_topic "sensor/gas"
+
+#define SCREEN_WIDTH 128 // OLED display width, in pixels
+#define SCREEN_HEIGHT 64 // OLED display height, in pixels
 
 //Buffer to decode MQTT messages
 char message_buff[100];
 
 long lastMsg = 0;   
 long lastRecu = 0;
-bool debug = false;  //Display log message if True
+bool debug = true;  //Display log message if True
 
 #define DHTPIN D4    // DHT Pin 
+#define LED_PIN D0
 
 // Un-comment you sensor
 //#define DHTTYPE DHT11       // DHT 11 
 #define DHTTYPE DHT22         // DHT 22  (AM2302)
+#define OLED_RESET 0  // GPIO0
 
 DHT dht(DHTPIN, DHTTYPE);     
 WiFiClient espClient;
 PubSubClient client(espClient);
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 void setup() {
   Serial.begin(9600);     
-  pinMode(D2,OUTPUT);     //Pin 2 for LED
+  pinMode(A0, INPUT);
+  pinMode(LED_PIN, OUTPUT);     //Pin 2 for LED
   setup_wifi();           //Connect to Wifi network
   client.setServer(mqtt_server, 1883);    // Configure MQTT connexion
   client.setCallback(callback);           // callback function to execute when a MQTT message   
   dht.begin();
+
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3D)) {
+    Serial.println("Display error!");
+  } else {
+    Serial.println("Display connected!");
+  }
+  
+  display.clearDisplay();
+
+  //Add stuff into the 'display buffer'
+  //display.setTextWrap(false);
+  //display.setTextSize(1);
+  //display.setTextColor(WHITE);
+  display.setCursor(0,0);
+  display.println("teeest.party");
+  //for(int16_t i=max(display.width(),display.height())/2; i>0; i-=5) {
+  //  display.fillTriangle(
+  //      display.width()/2  , display.height()/2-i,
+  //      display.width()/2-i, display.height()/2+i,
+  //      display.width()/2+i, display.height()/2+i, INVERSE);
+  //}
+ 
+  display.display(); //output 'display buffer' to screen  
+  display.startscrollleft(0x00, 0x0F); //make display scroll 
 }
 
 void setup_wifi() {
@@ -79,7 +115,8 @@ void loop() {
   client.loop();
 
   long now = millis();
-  // Send a message every minute
+
+  // Send a message every 10 seconds
   if (now - lastMsg > 1000 * 10) {
     lastMsg = now;
     // Read humidity
@@ -89,18 +126,30 @@ void loop() {
 
     // Oh, nothing to send
     if ( isnan(t) || isnan(h)) {
-      Serial.println("KO, Please chez DHT sensor !");
+      Serial.println("No climate info, please check DH Sensor!");
       return;
     }
+
+    float gasRaw = analogRead(A0);
+
+    if( isnan(gasRaw) ) {
+      Serial.println("No gas info, please check MQ-5 Sensor");
+      return;
+    }
+    
+    float gas = (gasRaw/1023.0) * 3.3;
   
     if ( debug ) {
       Serial.print("Temperature : ");
       Serial.print(t);
       Serial.print(" | Humidity : ");
-      Serial.println(h);
+      Serial.print(h);
+      Serial.print(" | Gas concentration : ");
+      Serial.println(gas);
     }  
     client.publish(temperature_topic, String(t).c_str(), true);   // Publish temperature on temperature_topic
     client.publish(humidity_topic, String(h).c_str(), true);      // and humidity
+    client.publish(gas_topic, String(gas).c_str(), true);      // and gas concentration
   }
   if (now - lastRecu > 100 ) {
     lastRecu = now;
@@ -128,12 +177,12 @@ void callback(char* topic, byte* payload, unsigned int length) {
   }
   
   if ( msgString == "ON" ) {
-    digitalWrite(D2,HIGH);  
+    digitalWrite(LED_PIN,HIGH);  
     if ( debug ) {
       Serial.println("Start LED");
     }
   } else {
-    digitalWrite(D2,LOW); 
+    digitalWrite(LED_PIN,LOW); 
     if ( debug ) {
       Serial.println("Stop LED");
     } 
