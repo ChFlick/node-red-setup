@@ -214,13 +214,13 @@
         "id": "5df56180.1d025",
         "type": "tuya-smart",
         "z": "685ea47.0b5645c",
-        "deviceName": "Schlafzimmer Schalter",
+        "deviceName": "Bedroom Socket",
         "deviceIp": "192.168.178.54",
         "deviceId": "1207701884f3eb1b6064",
         "deviceKey": "9d954df0a82ca849",
         "request": "{\"schema\": true}",
         "pollingInterval": "10",
-        "x": 612,
+        "x": 602,
         "y": 272,
         "wires": [
             [
@@ -233,13 +233,13 @@
         "id": "47b3803e.7d841",
         "type": "tuya-smart",
         "z": "685ea47.0b5645c",
-        "deviceName": "Wohnzimmer Schalter",
+        "deviceName": "Livingroom Socket",
         "deviceIp": "192.168.178.49",
         "deviceId": "0206813184f3eb1b9d8d",
         "deviceKey": "5f24c45d2426ffee",
         "request": "{\"schema\": true}",
         "pollingInterval": "10",
-        "x": 612,
+        "x": 602,
         "y": 352,
         "wires": [
             [
@@ -518,11 +518,11 @@
         "id": "8bd2d257.78f84",
         "type": "status",
         "z": "685ea47.0b5645c",
-        "name": "Connection Status Schlafzimmer",
+        "name": "Connection Status Bedroom",
         "scope": [
             "5df56180.1d025"
         ],
-        "x": 1058,
+        "x": 1048,
         "y": 160,
         "wires": [
             [
@@ -542,7 +542,7 @@
         "label": "Connection",
         "format": "{{msg.status.text}}",
         "layout": "row-spread",
-        "x": 1302,
+        "x": 1286,
         "y": 160,
         "wires": []
     },
@@ -550,11 +550,11 @@
         "id": "a0f2a245.574ef",
         "type": "status",
         "z": "685ea47.0b5645c",
-        "name": "Connection Status Wohnzimmer",
+        "name": "Connection Status Livingroom",
         "scope": [
             "47b3803e.7d841"
         ],
-        "x": 1058,
+        "x": 1048,
         "y": 464,
         "wires": [
             [
@@ -764,7 +764,7 @@
         "cancel": "",
         "topic": "Error",
         "name": "Error too high current",
-        "x": 1332,
+        "x": 1268,
         "y": 32,
         "wires": []
     },
@@ -934,13 +934,13 @@
         "id": "2e10bf4d.6b4ce",
         "type": "aggregator",
         "z": "685ea47.0b5645c",
-        "name": "",
+        "name": "5 minutes",
         "topic": "",
         "intervalCount": "5",
         "intervalUnits": "m",
         "submitIncompleteInterval": true,
         "aggregationType": "harmonicMean",
-        "x": 1046,
+        "x": 1052,
         "y": 272,
         "wires": [
             [
@@ -952,13 +952,13 @@
         "id": "bee0d3b2.dbb21",
         "type": "aggregator",
         "z": "685ea47.0b5645c",
-        "name": "",
+        "name": "5 minutes",
         "topic": "",
         "intervalCount": "5",
         "intervalUnits": "m",
         "submitIncompleteInterval": true,
         "aggregationType": "harmonicMean",
-        "x": 1046,
+        "x": 1052,
         "y": 352,
         "wires": [
             [
@@ -970,13 +970,13 @@
         "id": "5c5d5780.6c6288",
         "type": "aggregator",
         "z": "4b1ec0c4.1f837",
-        "name": "",
+        "name": "5 minutes",
         "topic": "",
         "intervalCount": "5",
         "intervalUnits": "m",
         "submitIncompleteInterval": true,
         "aggregationType": "harmonicMean",
-        "x": 342,
+        "x": 332,
         "y": 112,
         "wires": [
             [
@@ -988,13 +988,13 @@
         "id": "df120436.39b8e8",
         "type": "aggregator",
         "z": "4b1ec0c4.1f837",
-        "name": "",
+        "name": "5 minutes",
         "topic": "",
         "intervalCount": "5",
         "intervalUnits": "m",
         "submitIncompleteInterval": true,
         "aggregationType": "harmonicMean",
-        "x": 342,
+        "x": 332,
         "y": 208,
         "wires": [
             [
@@ -1090,11 +1090,11 @@
         "id": "d3f0ccaf.5faab",
         "type": "function",
         "z": "4b1ec0c4.1f837",
-        "name": "Round to 2 Dec",
+        "name": "Round to 2 dec",
         "func": "\nreturn {payload: Math.round(msg.payload * 100) / 100};",
         "outputs": 1,
         "noerr": 0,
-        "x": 528,
+        "x": 512,
         "y": 112,
         "wires": [
             [
@@ -1106,11 +1106,11 @@
         "id": "d7a9d472.e75898",
         "type": "function",
         "z": "4b1ec0c4.1f837",
-        "name": "Round to 2 Dec",
+        "name": "Round to 2 dec",
         "func": "\nreturn {payload: Math.round(msg.payload * 100) / 100};",
         "outputs": 1,
         "noerr": 0,
-        "x": 528,
+        "x": 512,
         "y": 208,
         "wires": [
             [
