@@ -332,8 +332,8 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 1292,
-        "y": 224,
+        "x": 1042,
+        "y": 208,
         "wires": []
     },
     {
@@ -358,8 +358,8 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 1292,
-        "y": 352,
+        "x": 1042,
+        "y": 400,
         "wires": []
     },
     {
@@ -397,8 +397,8 @@
             "#c5b0d5"
         ],
         "useOldStyle": false,
-        "x": 1322,
-        "y": 400,
+        "x": 1314,
+        "y": 352,
         "wires": [
             [],
             []
@@ -439,7 +439,7 @@
             "#c5b0d5"
         ],
         "useOldStyle": false,
-        "x": 1322,
+        "x": 1314,
         "y": 272,
         "wires": [
             [],
@@ -458,9 +458,9 @@
         "y": 272,
         "wires": [
             [
-                "995dc369.c8e24",
-                "527cc068.bb4ee",
-                "50cb63a.1a9a49c"
+                "50cb63a.1a9a49c",
+                "2e10bf4d.6b4ce",
+                "995dc369.c8e24"
             ]
         ]
     },
@@ -476,9 +476,9 @@
         "y": 352,
         "wires": [
             [
-                "c27b30d4.7d30c",
-                "c659756.9da0188",
-                "2348a459.f1192c"
+                "2348a459.f1192c",
+                "bee0d3b2.dbb21",
+                "c659756.9da0188"
             ]
         ]
     },
@@ -808,11 +808,11 @@
         "topic": "sensor/temperature",
         "qos": "2",
         "broker": "1dc71767.f9ab59",
-        "x": 202,
+        "x": 106,
         "y": 112,
         "wires": [
             [
-                "a284bb8d.fa8bd8",
+                "5c5d5780.6c6288",
                 "c4276034.bf068"
             ]
         ]
@@ -825,11 +825,11 @@
         "topic": "sensor/humidity",
         "qos": "2",
         "broker": "1dc71767.f9ab59",
-        "x": 192,
+        "x": 96,
         "y": 208,
         "wires": [
             [
-                "e6c99f18.be585",
+                "df120436.39b8e8",
                 "ebee911a.af052"
             ]
         ]
@@ -843,8 +843,8 @@
         "qos": "0",
         "retain": "false",
         "broker": "1dc71767.f9ab59",
-        "x": 532,
-        "y": 352,
+        "x": 276,
+        "y": 336,
         "wires": []
     },
     {
@@ -869,51 +869,9 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 480,
-        "y": 160,
+        "x": 322,
+        "y": 64,
         "wires": []
-    },
-    {
-        "id": "a284bb8d.fa8bd8",
-        "type": "ui_chart",
-        "z": "4b1ec0c4.1f837",
-        "name": "",
-        "group": "efb40622.bf9458",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "label": "",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "dd HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "7",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "86400",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "useOldStyle": false,
-        "x": 480,
-        "y": 112,
-        "wires": [
-            [],
-            []
-        ]
     },
     {
         "id": "ebee911a.af052",
@@ -937,51 +895,9 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 480,
+        "x": 322,
         "y": 256,
         "wires": []
-    },
-    {
-        "id": "e6c99f18.be585",
-        "type": "ui_chart",
-        "z": "4b1ec0c4.1f837",
-        "name": "",
-        "group": "eb42a8b3.f192d8",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "label": "",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "dd HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "7",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "86400",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "useOldStyle": false,
-        "x": 482,
-        "y": 208,
-        "wires": [
-            [],
-            []
-        ]
     },
     {
         "id": "fdd1d78d.6b0328",
@@ -1006,11 +922,231 @@
         "offvalueType": "str",
         "officon": "",
         "offcolor": "",
-        "x": 160,
-        "y": 352,
+        "x": 66,
+        "y": 336,
         "wires": [
             [
                 "9ff5a40f.764dd8"
+            ]
+        ]
+    },
+    {
+        "id": "2e10bf4d.6b4ce",
+        "type": "aggregator",
+        "z": "685ea47.0b5645c",
+        "name": "",
+        "topic": "",
+        "intervalCount": "5",
+        "intervalUnits": "m",
+        "submitIncompleteInterval": true,
+        "aggregationType": "harmonicMean",
+        "x": 1046,
+        "y": 272,
+        "wires": [
+            [
+                "9796d6d8.ae4158"
+            ]
+        ]
+    },
+    {
+        "id": "bee0d3b2.dbb21",
+        "type": "aggregator",
+        "z": "685ea47.0b5645c",
+        "name": "",
+        "topic": "",
+        "intervalCount": "5",
+        "intervalUnits": "m",
+        "submitIncompleteInterval": true,
+        "aggregationType": "harmonicMean",
+        "x": 1046,
+        "y": 352,
+        "wires": [
+            [
+                "379e2656.8e0eca"
+            ]
+        ]
+    },
+    {
+        "id": "5c5d5780.6c6288",
+        "type": "aggregator",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "topic": "",
+        "intervalCount": "5",
+        "intervalUnits": "m",
+        "submitIncompleteInterval": true,
+        "aggregationType": "harmonicMean",
+        "x": 342,
+        "y": 112,
+        "wires": [
+            [
+                "d3f0ccaf.5faab"
+            ]
+        ]
+    },
+    {
+        "id": "df120436.39b8e8",
+        "type": "aggregator",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "topic": "",
+        "intervalCount": "5",
+        "intervalUnits": "m",
+        "submitIncompleteInterval": true,
+        "aggregationType": "harmonicMean",
+        "x": 342,
+        "y": 208,
+        "wires": [
+            [
+                "d7a9d472.e75898"
+            ]
+        ]
+    },
+    {
+        "id": "3dfda98f.c131b6",
+        "type": "ui_chart",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "group": "efb40622.bf9458",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "7",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 674,
+        "y": 112,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4aeb8013.24d1",
+        "type": "ui_chart",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "group": "eb42a8b3.f192d8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "7",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 674,
+        "y": 208,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d3f0ccaf.5faab",
+        "type": "function",
+        "z": "4b1ec0c4.1f837",
+        "name": "Round to 2 Dec",
+        "func": "\nreturn {payload: Math.round(msg.payload * 100) / 100};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 528,
+        "y": 112,
+        "wires": [
+            [
+                "3dfda98f.c131b6"
+            ]
+        ]
+    },
+    {
+        "id": "d7a9d472.e75898",
+        "type": "function",
+        "z": "4b1ec0c4.1f837",
+        "name": "Round to 2 Dec",
+        "func": "\nreturn {payload: Math.round(msg.payload * 100) / 100};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 528,
+        "y": 208,
+        "wires": [
+            [
+                "4aeb8013.24d1"
+            ]
+        ]
+    },
+    {
+        "id": "9796d6d8.ae4158",
+        "type": "function",
+        "z": "685ea47.0b5645c",
+        "name": "Round",
+        "func": "\nreturn {payload: Math.round(msg.payload)};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1186,
+        "y": 272,
+        "wires": [
+            [
+                "527cc068.bb4ee"
+            ]
+        ]
+    },
+    {
+        "id": "379e2656.8e0eca",
+        "type": "function",
+        "z": "685ea47.0b5645c",
+        "name": "Round",
+        "func": "\nreturn {payload: Math.round(msg.payload)};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1186,
+        "y": 352,
+        "wires": [
+            [
+                "c27b30d4.7d30c"
             ]
         ]
     }
