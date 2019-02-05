@@ -7,7 +7,7 @@
 #include <Wire.h>
 
 #define wifi_ssid "FRITZ!Box 7490"
-#define wifi_password ""
+#define wifi_password "Flutz2017cc"
 
 #define mqtt_server "192.168.178.56"
 #define mqtt_user ""      // if exist
@@ -49,6 +49,7 @@ void setup() {
   client.setCallback(callback);           // callback function to execute when a MQTT message   
   dht.begin();
 
+  Serial.println("Initialize display!");
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3D)) {
     Serial.println("Display error!");
   } else {
