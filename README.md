@@ -35,9 +35,10 @@ The second flow controls MQTT devices. MQTT is handled by a [Mosca MQTT Broker](
 
 ## Sensor/Actuator Setup
 
-The Sensor/Actuator system uses a Wemos with an ESP8266 microcontroller.
-For temperature and humidity, a DHT22 sensor is used, reading through digital input.
-For the natural gas concentration, a MQ-5 sensor is used, reading through analog input.
+The Sensor/Actuator system uses a Wemos with an ESP8266 microcontroller.  
+For temperature and humidity, a DHT22 sensor is used, reading through digital input.  
+For the natural gas concentration, a MQ-5 sensor is used, reading through analog input.  
+The display is a 128x64 i2c SSD1306 display.  
 
 ![Sensor Actuator Setup Front](https://github.com/ChFlick/node-red-setup/blob/master/wemosSetupFront.jpg "Sensor Actuator Setup Front")
 ![Sensor Actuator Setup Back](https://github.com/ChFlick/node-red-setup/blob/master/wemosSetupBack.jpg "Sensor Actuator Setup Back")
