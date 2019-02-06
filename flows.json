@@ -211,6 +211,16 @@
         "height": 1
     },
     {
+        "id": "f9530e84.88e3e",
+        "type": "ui_group",
+        "z": "",
+        "name": "Actions",
+        "tab": "d83d4c22.a05d3",
+        "disp": true,
+        "width": "3",
+        "collapse": false
+    },
+    {
         "id": "5df56180.1d025",
         "type": "tuya-smart",
         "z": "685ea47.0b5645c",
@@ -224,8 +234,8 @@
         "y": 272,
         "wires": [
             [
-                "fb2fec78.46ac1",
-                "c533db6f.530198"
+                "c533db6f.530198",
+                "b4c8ae42.02bbc"
             ]
         ]
     },
@@ -243,8 +253,8 @@
         "y": 352,
         "wires": [
             [
-                "908a88d3.95ff78",
-                "6d2625d.352bedc"
+                "6d2625d.352bedc",
+                "1b87da03.656346"
             ]
         ]
     },
@@ -253,7 +263,7 @@
         "type": "ui_switch",
         "z": "685ea47.0b5645c",
         "name": "",
-        "label": "switch",
+        "label": "On/Off",
         "tooltip": "",
         "group": "606d43c8.0b05ac",
         "order": 4,
@@ -284,7 +294,7 @@
         "type": "ui_switch",
         "z": "685ea47.0b5645c",
         "name": "",
-        "label": "switch",
+        "label": "On/Off",
         "tooltip": "",
         "group": "729440c2.472fc",
         "order": 4,
@@ -444,42 +454,6 @@
         "wires": [
             [],
             []
-        ]
-    },
-    {
-        "id": "fb2fec78.46ac1",
-        "type": "function",
-        "z": "685ea47.0b5645c",
-        "name": "Extract current",
-        "func": "\nreturn {payload: msg.payload.data.dps[4]};",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 848,
-        "y": 272,
-        "wires": [
-            [
-                "50cb63a.1a9a49c",
-                "2e10bf4d.6b4ce",
-                "995dc369.c8e24"
-            ]
-        ]
-    },
-    {
-        "id": "908a88d3.95ff78",
-        "type": "function",
-        "z": "685ea47.0b5645c",
-        "name": "Extract current",
-        "func": "\nreturn {payload: msg.payload.data.dps[4]};",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 848,
-        "y": 352,
-        "wires": [
-            [
-                "2348a459.f1192c",
-                "bee0d3b2.dbb21",
-                "c659756.9da0188"
-            ]
         ]
     },
     {
@@ -797,7 +771,9 @@
         "x": 106,
         "y": 32,
         "wires": [
-            []
+            [
+                "4438549c.a95bac"
+            ]
         ]
     },
     {
@@ -840,10 +816,10 @@
         "z": "4b1ec0c4.1f837",
         "name": "",
         "topic": "homeassistant/switch1",
-        "qos": "0",
+        "qos": "2",
         "retain": "false",
         "broker": "1dc71767.f9ab59",
-        "x": 276,
+        "x": 292,
         "y": 336,
         "wires": []
     },
@@ -906,7 +882,7 @@
         "name": "",
         "label": "LED",
         "tooltip": "",
-        "group": "efb40622.bf9458",
+        "group": "f9530e84.88e3e",
         "order": 4,
         "width": 0,
         "height": 0,
@@ -939,7 +915,7 @@
         "intervalCount": "5",
         "intervalUnits": "m",
         "submitIncompleteInterval": true,
-        "aggregationType": "harmonicMean",
+        "aggregationType": "mean",
         "x": 1052,
         "y": 272,
         "wires": [
@@ -957,7 +933,7 @@
         "intervalCount": "5",
         "intervalUnits": "m",
         "submitIncompleteInterval": true,
-        "aggregationType": "harmonicMean",
+        "aggregationType": "mean",
         "x": 1052,
         "y": 352,
         "wires": [
@@ -975,7 +951,7 @@
         "intervalCount": "5",
         "intervalUnits": "m",
         "submitIncompleteInterval": true,
-        "aggregationType": "harmonicMean",
+        "aggregationType": "mean",
         "x": 332,
         "y": 112,
         "wires": [
@@ -993,7 +969,7 @@
         "intervalCount": "5",
         "intervalUnits": "m",
         "submitIncompleteInterval": true,
-        "aggregationType": "harmonicMean",
+        "aggregationType": "mean",
         "x": 332,
         "y": 208,
         "wires": [
@@ -1147,6 +1123,114 @@
         "wires": [
             [
                 "c27b30d4.7d30c"
+            ]
+        ]
+    },
+    {
+        "id": "8384e91f.f5b2b8",
+        "type": "mqtt out",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "topic": "homeassistant/display",
+        "qos": "2",
+        "retain": "",
+        "broker": "1dc71767.f9ab59",
+        "x": 290,
+        "y": 416,
+        "wires": []
+    },
+    {
+        "id": "de74cee5.b74fa",
+        "type": "ui_text_input",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "label": "Display",
+        "tooltip": "",
+        "group": "f9530e84.88e3e",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "mode": "text",
+        "delay": "20",
+        "topic": "",
+        "x": 76,
+        "y": 416,
+        "wires": [
+            [
+                "8384e91f.f5b2b8"
+            ]
+        ]
+    },
+    {
+        "id": "4438549c.a95bac",
+        "type": "debug",
+        "z": "4b1ec0c4.1f837",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 486,
+        "y": 32,
+        "wires": []
+    },
+    {
+        "id": "b4c8ae42.02bbc",
+        "type": "change",
+        "z": "685ea47.0b5645c",
+        "name": "Extract current",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.data.dps[4]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 848,
+        "y": 272,
+        "wires": [
+            [
+                "2e10bf4d.6b4ce",
+                "995dc369.c8e24",
+                "50cb63a.1a9a49c"
+            ]
+        ]
+    },
+    {
+        "id": "1b87da03.656346",
+        "type": "change",
+        "z": "685ea47.0b5645c",
+        "name": "Extract current",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.data.dps[4]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 848,
+        "y": 352,
+        "wires": [
+            [
+                "bee0d3b2.dbb21",
+                "c659756.9da0188",
+                "2348a459.f1192c"
             ]
         ]
     }
